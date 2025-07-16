@@ -21,78 +21,88 @@
   <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
   [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
 
-## Description
+# nest-ms-movies
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+Aplicación backend desarrollada con **NestJS** para la gestión de películas, siguiendo una arquitectura modular y buenas prácticas de desarrollo.
 
-## Project setup
+## Estructura del proyecto
 
-```bash
-$ pnpm install
+```
+nest-ms-movies
+├── .vscode/                # Configuración de VS Code
+│   └── launch.json
+├── src/                    # Código fuente principal
+│   ├── movies-ms/          # Microservicio de películas
+│   │   ├── application/
+│   │   │   └── services/
+│   │   │       ├── movie.service.ts
+│   │   │       ├── typeorm.service.ts
+│   │   ├── domain/
+│   │   │   └── model/
+│   │   │       └── movies.model.ts
+│   │   ├── infrastructure/
+│   │   │   └── controller/
+│   │   │       └── movie/
+│   │   │           └── movie.controller.ts
+│   │   └── movie.module.ts
+│   ├── shared/
+│   │   └── database/
+│   │       └── database.config.ts
+│   ├── app.module.ts
+│   └── main.ts
+├── test/                   # Pruebas end-to-end
+│   ├── app.e2e-spec.ts
+│   └── jest-e2e.json
+├── .env                    # Variables de entorno
+├── .gitignore              # Exclusiones de git
+├── .prettierrc             # Configuración de Prettier
+├── dev.env                 # Variables de entorno de desarrollo
+├── eslint.config.mjs       # Configuración de ESLint
+├── nest-cli.json           # Configuración de Nest CLI
+├── package.json            # Dependencias y scripts
+├── pnpm-lock.yaml          # Bloqueo de dependencias
+├── README.md               # Documentación principal
+├── tsconfig.build.json     # Configuración de TypeScript para build
+└── tsconfig.json           # Configuración de TypeScript
 ```
 
-## Compile and run the project
+## Descripción
+
+Este proyecto implementa un microservicio para la gestión de películas usando NestJS y TypeORM. La arquitectura está dividida en capas (aplicación, dominio, infraestructura y compartida), facilitando la escalabilidad y el mantenimiento.
+
+## Instalación
 
 ```bash
-# development
-$ pnpm run start
-
-# watch mode
-$ pnpm run start:dev
-
-# production mode
-$ pnpm run start:prod
+pnpm install
 ```
 
-## Run tests
+## Ejecución
 
 ```bash
-# unit tests
-$ pnpm run test
+# Desarrollo
+pnpm run start
 
-# e2e tests
-$ pnpm run test:e2e
+# Modo watch
+pnpm run start:dev
 
-# test coverage
-$ pnpm run test:cov
+# Producción
+pnpm run start:prod
 ```
 
-## Deployment
-
-When you're ready to deploy your NestJS application to production, there are some key steps you can take to ensure it runs as efficiently as possible. Check out the [deployment documentation](https://docs.nestjs.com/deployment) for more information.
-
-If you are looking for a cloud-based platform to deploy your NestJS application, check out [Mau](https://mau.nestjs.com), our official platform for deploying NestJS applications on AWS. Mau makes deployment straightforward and fast, requiring just a few simple steps:
+## Pruebas
 
 ```bash
-$ pnpm install -g @nestjs/mau
-$ mau deploy
+# Unitarias
+pnpm run test
+
+# End-to-end
+pnpm run test:e2e
+
+# Cobertura
+pnpm run test:cov
 ```
 
-With Mau, you can deploy your application in just a few clicks, allowing you to focus on building features rather than managing infrastructure.
+## Configuración
 
-## Resources
-
-Check out a few resources that may come in handy when working with NestJS:
-
-- Visit the [NestJS Documentation](https://docs.nestjs.com) to learn more about the framework.
-- For questions and support, please visit our [Discord channel](https://discord.gg/G7Qnnhy).
-- To dive deeper and get more hands-on experience, check out our official video [courses](https://courses.nestjs.com/).
-- Deploy your application to AWS with the help of [NestJS Mau](https://mau.nestjs.com) in just a few clicks.
-- Visualize your application graph and interact with the NestJS application in real-time using [NestJS Devtools](https://devtools.nestjs.com).
-- Need help with your project (part-time to full-time)? Check out our official [enterprise support](https://enterprise.nestjs.com).
-- To stay in the loop and get updates, follow us on [X](https://x.com/nestframework) and [LinkedIn](https://linkedin.com/company/nestjs).
-- Looking for a job, or have a job to offer? Check out our official [Jobs board](https://jobs.nestjs.com).
-
-## Support
-
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://twitter.com/kammysliwiec)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
+- Variables de entorno en `.env` y `dev.env`.
+- Configuración de base de datos en `src/shared/database/database.config.ts`.
