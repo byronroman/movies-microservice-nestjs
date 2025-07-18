@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { Movies } from '@movies-ms/domain/model/movies.model';
+import { Movies } from '@src/movies-ms/domain/model/movies.model';
 
 @Injectable()
 export class MovieService {
