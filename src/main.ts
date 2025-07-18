@@ -1,13 +1,15 @@
-import { Logger } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from '@src/app.module';
+import { CustomLoggerService } from '@src/shared/logger/custom-logger.service';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule, {
-    logger: ['log', 'error', 'warn', 'debug', 'verbose'],
+    bufferLogs: true,
   });
+  app.useLogger(app.get(CustomLoggerService));
   app.enableCors();
-  Logger.log('Aplicación iniciada correctamente');
+  const logger = app.get(CustomLoggerService);
+  logger.log('Microservicio iniciado correctamente');
   await app.listen(3000);
 }
 void bootstrap();

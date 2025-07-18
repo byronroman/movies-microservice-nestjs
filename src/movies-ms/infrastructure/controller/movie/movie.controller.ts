@@ -6,20 +6,21 @@ import {
   HttpStatus,
   Param,
   Post,
-  Logger,
 } from '@nestjs/common';
-import { MovieService } from '@movies-ms/application/services/movie.service';
+import { CustomLoggerService } from '@src/shared/logger/custom-logger.service';
+import { MovieService } from '@src/movies-ms/application/services/movie.service';
 import { Movies } from '@src/movies-ms/domain/model/movies.model';
 
 @Controller('movie')
 export class MovieController {
-  private readonly logger = new Logger(MovieController.name);
-
-  constructor(private moviesService: MovieService) {}
+  constructor(
+    private moviesService: MovieService,
+    private readonly logger: CustomLoggerService,
+  ) {}
 
   @Get()
   findAll() {
-    this.logger.log('Obteniendo todas las películas');
+    this.logger.logFindAll();
     return this.moviesService
       .findAll()
       .then((res) => {
@@ -35,9 +36,7 @@ export class MovieController {
 
   @Post()
   save(@Body() movie: Movies) {
-    this.logger.log(
-      `Guardando una nueva película: ${JSON.stringify(movie.name)}`,
-    );
+    this.logger.logSave(movie);
     return this.moviesService
       .create(movie)
       .then((res) => {
@@ -53,7 +52,7 @@ export class MovieController {
 
   @Post('/update')
   update(@Body() movie: Movies) {
-    this.logger.log(`Película "${JSON.stringify(movie.name)}" actualizada`);
+    this.logger.logUpdate(movie);
     return this.moviesService
       .update(movie)
       .then((res) => {
@@ -69,7 +68,7 @@ export class MovieController {
 
   @Get('/delete/:id')
   delete(@Param('id') id: number) {
-    this.logger.log(`Película con id: ${JSON.stringify(id)} eliminada`);
+    this.logger.logDelete(id);
     return this.moviesService
       .delete(id)
       .then((res) => {

@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
-import { MoviesModule } from '@movies-ms/movie.module';
+import { MoviesModule } from '@src/movies-ms/movie.module';
 
 @Module({
   imports: [
