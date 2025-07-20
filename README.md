@@ -12,14 +12,11 @@
 
 ---
 
-## ✨ nest-ms-movies
-
-Aplicación backend desarrollada con **NestJS** para la gestión de películas, siguiendo una arquitectura modular y buenas prácticas.
-=======
+# 🎬 CineVerse: Aplicación backend desarrollada con **NestJS** para la gestión de películas, siguiendo una arquitectura modular y buenas prácticas.
 
 <p align="center">
   <a href="https://github.com/byronroman/movies-frontend-angular" target="_blank">
-    <img src="https://img.shields.io/badge/Ver%20repositorio%20frontend-Angular-blue?style=for-the-badge" alt="Ver frontend Angular">
+    <img src="https://img.shields.io/badge/Ver%20Frontend%20Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white" alt="Ver Frontend Angular">
   </a>
 </p>
 
