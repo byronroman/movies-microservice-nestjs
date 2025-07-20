@@ -2,7 +2,7 @@
   <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>
 </p>
 
-<p align="center"><b>Microservicio de Películas 🎬 | NestJS + TypeORM + PostgreSQL</b></p>
+<p align="center"><b>Microservicio de Películas 🎮 | NestJS + TypeORM + PostgreSQL</b></p>
 
 <p align="center">
   <a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
@@ -12,7 +12,7 @@
 
 ---
 
-# 🎬 CineVerse: Aplicación backend desarrollada con **NestJS** para la gestión de películas, siguiendo una arquitectura modular y buenas prácticas.
+# 🎮 CineVerse: Aplicación backend desarrollada con **NestJS** para la gestión de películas, siguiendo una arquitectura modular y buenas prácticas.
 
 <p align="center">
   <a href="https://github.com/byronroman/movies-frontend-angular" target="_blank">
@@ -24,13 +24,13 @@
 
 ```
 nest-ms-movies/
-├── .vscode/                # Configuración de VS Code
+├── coverage/               # Contiene badges para Readme
 ├── src/                    # Código fuente principal
 │   ├── movies-ms/          # Microservicio de películas
 │   │   ├── application/
 │   │   │   └── services/
 │   │   │       ├── movie.service.ts
-│   │   │       ├── typeorm.service.ts
+│   │   │       └── typeorm.service.ts
 │   │   ├── domain/
 │   │   │   └── model/
 │   │   │       └── movies.model.ts
@@ -55,14 +55,16 @@ nest-ms-movies/
 └── README.md
 ```
 
-## 🤖 Cobertura de tests unitarios:
+## 🤖 Cobertura de tests unitarios
 
 <!-- coverage-badge-start -->
 
-![Statements](./coverage/badge-statements.svg)
-![Branches](./coverage/badge-branches.svg)
-![Functions](./coverage/badge-functions.svg)
-![Lines](./coverage/badge-lines.svg)
+<p align="center">
+  <img src="./coverage/badge-statements.svg" alt="Statements">
+  <img src="./coverage/badge-branches.svg" alt="Branches">
+  <img src="./coverage/badge-functions.svg" alt="Functions">
+  <img src="./coverage/badge-lines.svg" alt="Lines">
+</p>
 
 <!-- coverage-badge-end -->
 
@@ -70,10 +72,10 @@ nest-ms-movies/
 
 Este proyecto implementa un microservicio RESTful para gestionar películas usando **NestJS**, **PostgreSQL** y **TypeORM**, dividido en capas:
 
-- **application/**: Lógica de negocio y servicios
-- **domain/**: Modelos de dominio
-- **infrastructure/**: Controladores y entradas HTTP
-- **shared/**: Configuraciones reutilizables (DB, logger)
+* **application/**: Lógica de negocio y servicios
+* **domain/**: Modelos de dominio
+* **infrastructure/**: Controladores y entradas HTTP
+* **shared/**: Configuraciones reutilizables (DB, logger)
 
 ## 🔗 Endpoints principales
 
@@ -125,18 +127,20 @@ pnpm run start:dev
 # Unitarias
 pnpm run test
 
-# Cobertura
+# Cobertura + Badges
 pnpm run test:cov
+pnpm run coverage:badges
 ```
 
 ## 🔧 Configuración
 
-- Variables en `.env` y `dev.env`
-- Conexión a DB en `src/shared/database/database.config.ts`
+* Variables en `.env` y `dev.env`
+* Conexión a DB en `src/shared/database/database.config.ts`
 
 ## 📝 Notas adicionales
 
-- Este proyecto fue creado con fines educativos y se basa en una arquitectura limpia que puedes expandir o integrar con otros microservicios.
+* Este proyecto fue creado con fines educativos y se basa en una arquitectura limpia que puedes expandir o integrar con otros microservicios.
+* Los badges SVG para los test unitarios se generan automáticamente y se versionan para visibilidad en GitHub.
 
 ---
 
