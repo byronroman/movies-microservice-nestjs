@@ -69,3 +69,6 @@ lerna-debug.log*
 *.bak
 *.tmp
 *.orig
+
+/coverage
+!/coverage/badges

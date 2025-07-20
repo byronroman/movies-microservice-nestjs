@@ -57,6 +57,17 @@ nest-ms-movies/
 └── README.md
 ```
 
+## 🤖 Cobertura de tests unitarios:
+
+<!-- coverage-badge-start -->
+
+![Statements](./coverage/badge-statements.svg)
+![Branches](./coverage/badge-branches.svg)
+![Functions](./coverage/badge-functions.svg)
+![Lines](./coverage/badge-lines.svg)
+
+<!-- coverage-badge-end -->
+
 ## 📊 Descripción
 
 Este proyecto implementa un microservicio RESTful para gestionar películas usando **NestJS**, **PostgreSQL** y **TypeORM**, dividido en capas:
