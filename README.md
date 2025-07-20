@@ -2,35 +2,32 @@
   <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>
 </p>
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+<p align="center"><b>Microservicio de Películas 🎬 | NestJS + TypeORM + PostgreSQL</b></p>
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg" alt="Donate us"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow" alt="Follow us on Twitter"></a>
+<p align="center">
+  <a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
+  <a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
+  <a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
 </p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
 
-# nest-microservice-movies
+---
 
-Aplicación backend desarrollada con **NestJS** para la gestión de películas, siguiendo una arquitectura modular y buenas prácticas de desarrollo.
+## ✨ nest-ms-movies
 
-## Estructura del proyecto
+Aplicación backend desarrollada con **NestJS** para la gestión de películas, siguiendo una arquitectura modular y buenas prácticas.
+=======
+
+<p align="center">
+  <a href="https://github.com/byronroman/movies-frontend-angular" target="_blank">
+    <img src="https://img.shields.io/badge/Ver%20repositorio%20frontend-Angular-blue?style=for-the-badge" alt="Ver frontend Angular">
+  </a>
+</p>
+
+## 📂 Estructura del proyecto
 
 ```
-nest-ms-movies
+nest-ms-movies/
 ├── .vscode/                # Configuración de VS Code
-│   └── launch.json
 ├── src/                    # Código fuente principal
 │   ├── movies-ms/          # Microservicio de películas
 │   │   ├── application/
@@ -48,61 +45,93 @@ nest-ms-movies
 │   ├── shared/
 │   │   └── database/
 │   │       └── database.config.ts
+│   │   └── logger/
+│   │       ├── custom-logger.service.ts
+│   │       └── logger.module.ts
 │   ├── app.module.ts
 │   └── main.ts
-├── test/                   # Pruebas end-to-end
-│   ├── app.e2e-spec.ts
-│   └── jest-e2e.json
 ├── .env                    # Variables de entorno
-├── .gitignore              # Exclusiones de git
-├── .prettierrc             # Configuración de Prettier
-├── dev.env                 # Variables de entorno de desarrollo
-├── eslint.config.mjs       # Configuración de ESLint
-├── nest-cli.json           # Configuración de Nest CLI
-├── package.json            # Dependencias y scripts
+├── dev.env                 # Entorno de desarrollo
+├── package.json            # Dependencias
 ├── pnpm-lock.yaml          # Bloqueo de dependencias
-├── README.md               # Documentación principal
-├── tsconfig.build.json     # Configuración de TypeScript para build
-└── tsconfig.json           # Configuración de TypeScript
+├── tsconfig.json           # Configuración de TypeScript
+└── README.md
 ```
 
-## Descripción
+## 📊 Descripción
 
-Este proyecto implementa un microservicio para la gestión de películas usando NestJS y TypeORM. La arquitectura está dividida en capas (aplicación, dominio, infraestructura y compartida), facilitando la escalabilidad y el mantenimiento.
+Este proyecto implementa un microservicio RESTful para gestionar películas usando **NestJS**, **PostgreSQL** y **TypeORM**, dividido en capas:
 
-## Instalación
+- **application/**: Lógica de negocio y servicios
+- **domain/**: Modelos de dominio
+- **infrastructure/**: Controladores y entradas HTTP
+- **shared/**: Configuraciones reutilizables (DB, logger)
+
+## 🔗 Endpoints principales
+
+| Método | Ruta                | Descripción                   |
+| ------ | ------------------- | ----------------------------- |
+| GET    | `/movie`            | Obtener todas las películas   |
+| POST   | `/movie`            | Crear una nueva película      |
+| POST   | `/movie/update`     | Actualizar película existente |
+| GET    | `/movie/delete/:id` | Eliminar película por ID      |
+
+## 📄 Tabla y ejemplo de inserción
+
+```sql
+CREATE TABLE cinema.movies (
+  id serial PRIMARY KEY,
+  name varchar(100) NOT NULL,
+  description varchar(255),
+  time varchar(20),
+  image text,
+  status boolean
+);
+
+INSERT INTO cinema.movies (name, description, time, image, status)
+VALUES (
+  'Spider-Man: Into the Spider-Verse',
+  'Teen Miles Morales becomes Spider-Man in his universe and joins others from different dimensions to save the multiverse.',
+  '1h 57m',
+  'https://m.media-amazon.com/images/I/81k8XlRibzL._AC_SY679_.jpg',
+  TRUE
+);
+```
+
+## 🚀 Instalación
 
 ```bash
 pnpm install
 ```
 
-## Ejecución
+## 🔄 Ejecución
 
 ```bash
 # Desarrollo
-pnpm run start
-
-# Modo watch
 pnpm run start:dev
-
-# Producción
-pnpm run start:prod
 ```
 
-## Pruebas
+## 🔮 Pruebas
 
 ```bash
 # Unitarias
 pnpm run test
 
-# End-to-end
-pnpm run test:e2e
-
 # Cobertura
 pnpm run test:cov
 ```
 
-## Configuración
+## 🔧 Configuración
 
-- Variables de entorno en `.env` y `dev.env`.
-- Configuración de base de datos en `src/shared/database/database.config.ts`.
+- Variables en `.env` y `dev.env`
+- Conexión a DB en `src/shared/database/database.config.ts`
+
+## 📝 Notas adicionales
+
+- Este proyecto fue creado con fines educativos y se basa en una arquitectura limpia que puedes expandir o integrar con otros microservicios.
+
+---
+
+## 🧑‍💻 Autor
+
+> Desarrollado por [Byron Román](https://github.com/byronroman) — IBM Intern & Fullstack Developer.
