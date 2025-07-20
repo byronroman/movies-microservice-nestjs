@@ -70,5 +70,11 @@ lerna-debug.log*
 *.tmp
 *.orig
 
-/coverage
-!/coverage/badges
+# Ignorar todo en coverage/
+coverage/*
+
+# Pero NO ignorar estos badges SVG
+!coverage/badge-branches.svg
+!coverage/badge-functions.svg
+!coverage/badge-lines.svg
+!coverage/badge-statements.svg
